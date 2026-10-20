@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Part 4 · To-Do List</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <a class="brand" href="index.html">Assignment 5 · JavaScript</a>
+    <a href="index.html">Home</a>
+    <a href="part1.html">Part 1. Intro</a>
+    <a href="part2.html">Part 2. DOM</a>
+    <a href="part3.html">Part 3. Events</a>
+    <a href="part4.html" class="active">Part 4. To-Do</a>
+  </nav>
+
+  <main>
+    <h1>Part 4. Mini Project — Task 8. To-Do List</h1>
+
+    <div class="todo-layout">
+      <!-- Left column: list of tasks -->
+      <section>
+        <h2>To-do list</h2>
+        <p id="emptyText" class="hint">No tasks yet. Add your first task.</p>
+        <ul id="taskList"></ul>
+      </section>
+
+      <!-- Right column: form to add a task -->
+      <section>
+        <h2>Add new task</h2>
+        <div class="todo-form">
+          <label for="titleInput">* Title</label>
+          <input type="text" id="titleInput">
+
+          <label for="descInput">* Description</label>
+          <textarea id="descInput" rows="6"></textarea>
+
+          <p id="errorText"></p>
+          <button id="addTaskBtn">Add Task</button>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>Yussupov Nurlan · SE-2526 · Web Technologies 1</footer>
+
+  <script src="js/part4.js"></script>
+</body>
+</html>
