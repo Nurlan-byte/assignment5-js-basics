@@ -91,3 +91,12 @@ footer {
   color: #666;
   padding: 16px;
 }
+
+/* ===== Part 2. DOM Manipulation ===== */
+#styleBox {
+  padding: 30px;
+  background-color: #e0e0e0;
+  border-radius: 6px;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
