@@ -200,3 +200,10 @@ footer {
 .todo-header .delete-btn {
   background-color: #e53935;
 }
+
+/* Completed task: strike-through text */
+.todo-item.done h3,
+.todo-item.done p {
+  text-decoration: line-through;
+  color: #999;
+}

@@ -1,7 +1,7 @@
 // ===== Task 8. Interactive To-Do List =====
 
 // All tasks are stored in this array (no database, no localStorage).
-// Each task is an object: { title: "...", description: "..." }
+// Each task is an object: { title: "...", description: "...", done: false }
 let tasks = [];
 
 let titleInput = document.getElementById("titleInput");
@@ -22,6 +22,9 @@ function renderTasks() {
     // <li class="todo-item">
     let li = document.createElement("li");
     li.className = "todo-item";
+    if (task.done) {
+      li.classList.add("done"); // CSS class with line-through
+    }
 
     // Header: title + buttons
     let header = document.createElement("div");
@@ -29,6 +32,17 @@ function renderTasks() {
 
     let title = document.createElement("h3");
     title.textContent = task.title;
+
+    let doneBtn = document.createElement("button");
+    if (task.done) {
+      doneBtn.textContent = "Undo";
+    } else {
+      doneBtn.textContent = "✓ Done";
+    }
+    doneBtn.addEventListener("click", function () {
+      task.done = !task.done; // true -> false, false -> true
+      renderTasks();
+    });
 
     let deleteBtn = document.createElement("button");
     deleteBtn.textContent = "✕ Delete";
@@ -39,6 +53,7 @@ function renderTasks() {
     });
 
     header.appendChild(title);
+    header.appendChild(doneBtn);
     header.appendChild(deleteBtn);
 
     // Description
@@ -71,7 +86,7 @@ addTaskBtn.addEventListener("click", function () {
     return;
   }
 
-  tasks.push({ title: title, description: description });
+  tasks.push({ title: title, description: description, done: false });
 
   // Clear the form
   errorText.textContent = "";
